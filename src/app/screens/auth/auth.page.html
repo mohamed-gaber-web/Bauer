@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="login-page">
+    <h3 class="title">{{ 'loginText' | translate }}</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="loginHandler()">
+      <div class="form-group">
+        <input type="email" class="input-form" formControlName="email" />
+        <ion-icon name="person-outline"></ion-icon>
+        <div
+          class="invalid"
+          *ngIf="email.invalid && (email.touched || email.dirty)"
+        >
+          {{ "emailRequired" | translate }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="input-form" formControlName="password" />
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <div
+          class="invalid"
+          *ngIf="password.invalid && (password.touched || password.dirty)"
+        >
+          {{ "passwordRequired" | translate }}
+        </div>
+      </div>
+      <ion-button [disabled]="loginForm.invalid" (click)="loginHandler()">
+        {{ 'signIn' | translate }}
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

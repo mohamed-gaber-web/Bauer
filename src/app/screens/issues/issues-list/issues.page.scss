@@ -1,0 +1,40 @@
+h3 {
+  color: var(--ion-color-secondary);
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.report-block {
+    background-color: #eff3f9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin: 10px 0;
+
+    h4, p.category {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ion-color-secondary);
+      margin: 10px 0;
+    }
+
+    h5, p.code, p.time {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+      margin: 5px 0;
+    }
+
+    .status-time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .status {
+        background-color: #f1e4ca;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 12px 10px;
+        border-radius: 10px;
+      }
+    }
+}

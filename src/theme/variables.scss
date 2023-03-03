@@ -2,9 +2,32 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+// * {
+//   font-family: 'Raleway', sans-serif;
+// }
+
+// body.ios {
+//   font-family: 'Raleway', sans-serif;
+// }
+
+// html.ios {
+// font-family: 'Raleway', sans-serif;
+// }
+
+
+
 :root {
+  // change font family
+  --ion-font-family: 'Raleway', sans-serif;
+
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #104c97;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -12,7 +35,7 @@
   --ion-color-primary-tint: #4c8dff;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary: #f5ac18;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;

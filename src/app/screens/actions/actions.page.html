@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <div class="icon-page">
+      <ion-img src="../../../assets/images/add.png"> </ion-img>
+    </div>
+    <!-- action details  -->
+    <div *ngIf="actionDetails">
+      <div class="action-block" *ngFor="let action of actionDetails.list">
+        <h4>{{action.description}}</h4>
+        <div class="time">
+          <p>{{action.createdDate}}</p>
+          <!-- <p>12:25PM</p> -->
+        </div>
+      </div>
+    </div>
+    <div
+      class="alert ion-text-center"
+      *ngIf="actionDetails && actionDetails.count === 0"
+    >
+      No result now please add action
+    </div>
+    <!-- action details -->
+    <div class="add-actions">
+      <ion-icon
+        name="add-circle-outline"
+        expand="block"
+        (click)="setOpen()"
+      ></ion-icon>
+    </div>
+  </ion-grid>
+
+  <!-- modal add action -->
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Add action</ion-title>
+          <ion-buttons slot="end">
+            <!-- <ion-button (click)="setOpen()">Close</ion-button> -->
+            <ion-button (click)="addNewAction()">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form [formGroup]="AddActionForm">
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-input
+              placeholder="Enter text"
+              formControlName="description"
+            ></ion-input>
+          </ion-item>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <!-- modal add action -->
+</ion-content>

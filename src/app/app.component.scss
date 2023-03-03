@@ -1,0 +1,35 @@
+ion-menu{
+     --background: var(--ion-color-primary) !important;
+        ion-content{
+            --background: var(--ion-color-primary) !important;
+          ul {
+            list-style: none;
+            margin-top: 50px;
+
+            li {
+              color: #fff;
+              font-size: 22px;
+              line-height: 35px;
+              font-weight: 400;
+              padding: 7px 0;
+
+              ion-icon{
+                padding-right: 20px !important;
+                font-size: 35px;
+                color: var(--ion-color-secondary);
+                position: relative;
+                top: 12px;
+              }
+            }
+          }
+        }
+  }
+
+  hr {
+    height: 1px;
+    border-width: 0;
+    box-sizing: content-box;
+    border-bottom: 1px solid #d1900c;
+    padding: 10px;
+    margin-right: 29px;
+}

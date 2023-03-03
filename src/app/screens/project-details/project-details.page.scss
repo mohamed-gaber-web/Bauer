@@ -1,0 +1,24 @@
+ion-accordion {
+  border-radius: 10px;
+  margin: 7px 0;
+  ion-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+  }
+
+  icon-icon {
+    color: var(--ion-color-primary);
+  }
+
+}
+
+.accordion-expanded {
+  ion-label {
+   color: var(--ion-color-secondary);
+  }
+}
+
+.accordion-expanded .ion-accordion-toggle-icon {
+  color: var(--ion-color-secondary) !important;
+}

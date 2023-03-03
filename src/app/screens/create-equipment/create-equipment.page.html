@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <div class="block-bg timer">
+      <cd-timer
+        format="hms"
+        style="
+          font-size: 40px;
+          font-weight: 700;
+          color: var(--ion-color-primary);
+          font-family: monospace !important;
+        "
+      ></cd-timer>
+    </div>
+    <div class="block-bg equip-desc">
+      <h3>Equipment model:</h3>
+      <p>MC 128</p>
+      <h3>Equipment serial:</h3>
+      <p>MC 128</p>
+      <h3>Location:</h3>
+      <p>Al ain elsokhna</p>
+    </div>
+    <div class="block-bg equip-image">
+      <h3>Breakdown type</h3>
+      <div class="img">
+        <ion-img src="../../../../assets/images/test.jpg" alt=""></ion-img>
+        <ion-img src="../../../../assets/images/test.jpg" alt=""></ion-img>
+        <ion-img src="../../../../assets/images/test.jpg" alt=""></ion-img>
+        <ion-img src="../../../../assets/images/test.jpg" alt=""></ion-img>
+      </div>
+    </div>
+    <div class="block-bg equip-action">
+      <div class="child-img" routerLink="/spare-parts">
+        <ion-img src="../../../assets/images/spare-parts.png"> </ion-img>
+        <h4>Spare Parts</h4>
+      </div>
+      <div class="child-img" routerLink="/actions">
+        <ion-img src="../../../assets/images/add.png"> </ion-img>
+        <h4>Action</h4>
+      </div>
+      <div class="child-img" (click)="presentAlert()">
+        <ion-img src="../../../assets/images/checked.png"> </ion-img>
+        <h4>End</h4>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>

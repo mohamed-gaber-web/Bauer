@@ -1,0 +1,61 @@
+h3 {
+  color: var(--ion-color-secondary);
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.issue-block {
+    background-color: #eff3f9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin: 10px 0;
+
+    h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ion-color-secondary);
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+      margin: 15px 0;
+    }
+
+    .status {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .status-time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+
+    }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  ion-icon {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ion-color-secondary);
+  }
+}
+
+p.time-digital {
+  font-size: 20px !important;
+}

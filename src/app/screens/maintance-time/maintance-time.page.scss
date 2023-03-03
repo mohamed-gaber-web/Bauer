@@ -1,0 +1,16 @@
+.maintance-time {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30vh;
+    width: 100%;
+
+  ion-text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--ion-color-secondary);
+    margin: 20px 0;
+  }
+}

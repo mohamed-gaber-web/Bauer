@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="response-time ion-text-center ion-padding">
+    <ion-text color="secondary"> {{ 'responseTime' | translate }} </ion-text>
+
+    <div class="block-bg timer">
+      <cd-timer
+        format="hms"
+        style="
+          font-size: 30px;
+          font-weight: 700;
+          color: var(--ion-color-primary);
+        "
+      ></cd-timer>
+    </div>
+
+    <div class="scan-img">
+      <ion-img
+        src="https://qrcg-free-editor.qr-code-generator.com/main/assets/images/websiteQRCode_noFrame.png"
+      ></ion-img>
+    </div>
+
+    <h4 (click)="presentAlert()">Cancel</h4>
+  </ion-grid>
+</ion-content>

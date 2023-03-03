@@ -1,0 +1,73 @@
+<app-header></app-header>
+
+<ion-content
+  [fullscreen]="true"
+  [style.--background]="scanActive?'#00000000':'#ffffff'"
+>
+  <ion-grid class="ion-padding ion-text-center">
+    <div class="block-bg">
+      <ion-text> {{ 'scan' | translate }} </ion-text>
+    </div>
+    <div class="block-scan">
+      <div>
+        <ion-button
+          color="primary"
+          size="large"
+          shape="round"
+          expand="full"
+          class="ion-margin-top"
+          (click)="startScanner()"
+          [hidden]="scanActive"
+        >
+          {{ 'scan' | translate }}
+        </ion-button>
+        <ion-row class="scan-button" [hidden]="!scanActive">
+          <ion-col class="ion-no-padding">
+            <ion-button expand="full" (click)="stopScanner()">Stop</ion-button>
+          </ion-col>
+        </ion-row>
+        <div class="scan-box" [hidden]="!scanActive"></div>
+      </div>
+      <!-- <div class="or">{{ "OR" | translate}}</div>
+      <div class="code">
+        <h3 (click)="setOpen(true)">{{ 'typeCode' | translate }}</h3>
+      </div>
+      <ion-button
+        color="secondary"
+        size="large"
+        shape="round"
+        expand="full"
+        class="ion-margin-top"
+        routerLink="/create-equipment"
+        [hidden]="scanActive"
+        style="width: 40%; margin: 40px auto 0 auto"
+      >
+        {{ 'save' | translate }}
+      </ion-button> -->
+    </div>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Close</ion-button>
+            </ion-buttons>
+            <ion-buttons slot="start">
+              <ion-button (click)="confirm()">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item fill="solid">
+            <ion-label position="floating">Type Code</ion-label>
+            <ion-input
+              color="primary"
+              class="input-code"
+              placeholder="Enter code"
+            ></ion-input>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <div class="maintance-time">
+      <ion-text> {{ 'maintenance' | translate }} </ion-text>
+      <div class="block-bg">
+        <cd-timer
+          format="hms"
+          style="
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--ion-color-primary);
+            font-family: monospace !important;
+          "
+        ></cd-timer>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>

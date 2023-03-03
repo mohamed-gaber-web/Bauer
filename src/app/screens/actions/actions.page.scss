@@ -1,0 +1,26 @@
+
+.action-block {
+    background-color: #eff3f9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin: 10px 0;
+
+    h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ion-color-secondary);
+      margin: 15px 0;
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+}

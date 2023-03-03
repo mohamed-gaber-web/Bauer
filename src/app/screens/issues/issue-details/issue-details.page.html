@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="ion-padding" *ngIf="issueDetails">
+    <!-- issue details  -->
+    <div class="issue-block">
+      <p class="status" style="color: var(--ion-color-primary)">
+        {{ issueDetails.statusName }}
+      </p>
+      <h4>{{ 'project' | translate }}</h4>
+      <p>{{ issueDetails.projectName}}</p>
+      <h4>{{ 'equipment' | translate }}</h4>
+      <p>{{ issueDetails.equipmentName }}</p>
+      <h4>{{ 'breakdownType' | translate }}</h4>
+      <p>Hyd. filter</p>
+    </div>
+    <!-- issues details -->
+    <div class="actions" [routerLink]="['/actions', issueIdSelect]">
+      <h4>{{ 'actions' | translate}}</h4>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <!-- issue details  -->
+    <div class="issue-block">
+      <h4>{{ 'time' | translate }}</h4>
+      <div class="time">
+        <p>From: 11/7/2022 9:45AM</p>
+        <p>To: 11/7/2022 9:45AM</p>
+      </div>
+      <h4>{{ 'responseTime' | translate }}</h4>
+      <p class="time-digital">{{ issueDetails.responseTime }}</p>
+      <h4>{{ 'maintenanceTime' | translate }}</h4>
+      <p class="time-digital">{{ issueDetails.maintenanceTime }}</p>
+      <h4>Spare parts</h4>
+      <p *ngFor="let spare of issueDetails.spareParts">{{spare}}</p>
+      <h4>{{ 'operator' | translate }}</h4>
+      <p>{{ issueDetails.createdByName }}</p>
+    </div>
+    <!-- issues details -->
+  </ion-grid>
+</ion-content>

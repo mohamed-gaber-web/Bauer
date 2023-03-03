@@ -1,0 +1,28 @@
+.block-bg {
+  padding: 10px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ion-color-secondary);
+    margin: 5px 0;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+    margin: 5px 0;
+  }
+
+  ion-icon {
+    text-align: right;
+    float: right;
+    font-size: 25px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.block-bg:hover ion-icon {
+  color: var(--ion-color-secondary);
+}

@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: #eff3f9;
+    text-align: center;
+
+    th {
+      padding: 0.75rem;
+      // vertical-align: top;
+      border-top: 1px solid #dee2e6;
+      background-color: #f1e4ca;
+    }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    color: var(--ion-color-primary);
+
+  }
+
+  td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    color: var(--ion-color-primary);
+    font-weight: 600;
+
+  }
+
+  ion-icon {
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.id-color {
+  color: var(--ion-color-secondary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ready {
+  color: var(--ion-color-success)!important;
+}
+

@@ -1,0 +1,61 @@
+.scan-box {
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  left: 50%;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+.scan-button {
+  margin: 0px;
+  position: absolute;
+  bottom: 100px;
+  width: 100vw;
+  height: 50px;
+  z-index: 11;
+}
+
+.block-scan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.or {
+  color: var(--ion-color-secondary);
+  font-size: 22px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.code {
+  h3 {
+    color: var(--ion-color-primary);
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+ion-modal {
+  --height: 20%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --width: 90%;
+  margin: auto;
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+}
