@@ -11,3 +11,6 @@ export const getIssueDetails = `${url}api/Issue/GetIssueDetails`;
 // actions
 export const getActionsByUser = `${url}api/Action/GetUserProjectByUser`;
 export const createActionsByUser = `${url}api/Action`;
+
+// images
+export const getImageBreakdown = `${url}api/Attachment/GetAllByModuleName`;

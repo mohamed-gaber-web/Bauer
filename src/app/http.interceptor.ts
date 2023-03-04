@@ -7,7 +7,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError, finalize } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { StorageService } from './shared/services/storage.service';
 import { ToasterServive } from './shared/services/toaster.service';
 
@@ -19,7 +19,6 @@ export class HttpInterceptor implements HttpInterceptor {
     httpRequest: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    // this.loaderService.show();
     const token = this.storageService.getAccessToken();
 
     if (token) {
@@ -28,9 +27,6 @@ export class HttpInterceptor implements HttpInterceptor {
       });
     }
     return next.handle(httpRequest).pipe(
-      // finalize(() => {
-      //   this.loaderService.hide();
-      // }),
       catchError((err) => {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {

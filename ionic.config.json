@@ -4,10 +4,8 @@
     "capacitor": {}
   },
   "type": "angular",
-    "proxies": [
-    {
-      "path": "/",
-      "proxyUrl": "http://localhost:4200/"
-    }
-]
+    "proxies": [{
+    "path": "/api",
+    "proxyUrl": "http://bauertest-001-site1.ftempurl.com/"
+  }]
 }

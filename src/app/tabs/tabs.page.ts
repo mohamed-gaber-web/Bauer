@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Permissions } from '../shared/constants/permissions';
+
+import { AuthService } from './../screens/auth/services/auth.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +10,16 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  userInfo: any;
+  permissions = Permissions;
+
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.userInfo.subscribe(res => {
+      this.userInfo = res;
+    })
+  }
 
 }

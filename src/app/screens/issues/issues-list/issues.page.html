@@ -1,15 +1,15 @@
 <app-header></app-header>
 <ion-toolbar color="primary">
   <ion-title>
-    <h5 class="text-ar">{{ "name" | translate }}</h5>
-    <h3>Senior mechanic</h3>
+    <h5 class="text-ar">{{ userInfo.email }}</h5>
+    <h3>{{ userInfo.roles }}</h3>
   </ion-title>
 </ion-toolbar>
 
 <ion-content>
   <ion-grid class="ion-padding">
     <h2 class="title">{{ "reports" | translate }}</h2>
-    <!-- Report Block  -->
+    <!-- Report Block [ senior - gunior - technichan ] -->
     <div class="report-block" *ngFor="let issue of issueList.list">
       <h4 [routerLink]="['/issue-details', issue.id]">Project</h4>
       <h5>{{ issue.projectName }}</h5>
@@ -23,5 +23,11 @@
       </div>
     </div>
     <!-- Report Block -->
+
+    <!-- Report Block [ Operator ] -->
+    <div *ngIf="userInfo.roles === permissions.Operator " class="report-image">
+      <ion-img src="../../../assets/images/report.png"></ion-img>
+      <ion-button routerLink="/select-breakdown"> Create issue </ion-button>
+    </div>
   </ion-grid>
 </ion-content>

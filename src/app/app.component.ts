@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { StorageService } from './shared/services/storage.service';
+import { AuthService } from './screens/auth/services/auth.service';
 
 import { Permissions } from './shared/constants/permissions';
 @Component({
@@ -18,6 +19,7 @@ export class AppComponent {
     public translate: TranslateService,
     private storageService: StorageService,
     private router: Router,
+    private authService: AuthService
     ) {
 
     this.currentLang = localStorage.getItem('currentLang') || 'en-US';
@@ -28,7 +30,9 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.authService.userInfo.subscribe(res => {
+      this.user = res;
+    })
     if(!localStorage.getItem('currentLang')) {
       localStorage.setItem('currentLang', 'en-US');
     }

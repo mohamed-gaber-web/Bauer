@@ -3,4 +3,5 @@ export const Permissions = {
   Senior: 'Senior',
   Junior: 'Junior',
   Technician : 'Technician',
+  Admin: 'Admin'
 }

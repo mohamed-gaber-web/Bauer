@@ -3,6 +3,9 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { issueListResult } from '../model/issue.model';
 import { LoadingController } from '@ionic/angular';
+import { StorageService } from 'src/app/shared/services/storage.service';
+import { Permissions } from 'src/app/shared/constants/permissions';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-issues',
@@ -13,11 +16,20 @@ export class IssuesPage implements OnInit {
 
   sub: Subscription[] = [];
   issueList!: issueListResult;
+  userInfo: any;
+  permissions = Permissions;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private storageService: StorageService,
+    private authService: AuthService
+    ) { }
 
   ngOnInit() {
     this.getAllIissue();
+    this.authService.userInfo.subscribe(res => {
+      this.userInfo = res
+    })
   }
 
   getAllIissue() {
@@ -29,7 +41,12 @@ export class IssuesPage implements OnInit {
   }
 
   ionViewWillLeave() {
-    this.sub.forEach(el => el.unsubscribe())
+    this.sub.forEach(el => el.unsubscribe());
+  }
+
+  ngOnDestroy() {
+    console.log('leaving component');
+    this.userInfo = {};
   }
 
 }

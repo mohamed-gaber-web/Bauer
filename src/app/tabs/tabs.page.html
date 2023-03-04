@@ -5,7 +5,7 @@
       <!-- <ion-label>Tab 1</ion-label> -->
     </ion-tab-button>
 
-    <ion-tab-button tab="scan">
+    <ion-tab-button tab="scan" *ngIf="userInfo.roles !== permissions.Operator ">
       <ion-icon name="scan-outline"></ion-icon>
       <!-- <ion-label>Tab 2</ion-label> -->
     </ion-tab-button>

@@ -62,10 +62,6 @@ const routes: Routes = [
     path: 'maintance-time',
     loadChildren: () => import('./screens/maintance-time/maintance-time.module').then( m => m.MaintanceTimePageModule)
   },
-  {
-    path: 'operator-report',
-    loadChildren: () => import('./screens/operator-report/operator-report.module').then( m => m.OperatorReportPageModule)
-  },
 ];
 @NgModule({
   imports: [

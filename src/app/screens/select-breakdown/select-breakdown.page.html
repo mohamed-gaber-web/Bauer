@@ -5,52 +5,11 @@
 
   <ion-grid class="ion-padding">
     <ion-row class="ion-text-center">
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-img
-          src="https://docs-demo.ionic.io/assets/madison.jpg"
-          class="ion-margin-bottom"
-        ></ion-img>
-        <ion-checkbox></ion-checkbox>
+      <ion-col size="6" *ngFor="let break of breakdownList">
+        <ion-img [src]="break.image" class="ion-margin-bottom"></ion-img>
+        <ion-checkbox
+          (ionChange)="selectImage($event, break.id)"
+        ></ion-checkbox>
       </ion-col>
     </ion-row>
   </ion-grid>

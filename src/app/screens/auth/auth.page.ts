@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,9 +6,8 @@ import { DataService } from 'src/app/shared/services/data.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { ToasterServive } from 'src/app/shared/services/toaster.service';
 import { emailValidator } from 'src/app/shared/validators/app.validators';
-
-// import { Keyboard } from '@capacitor/keyboard';
 import { LoadingController } from '@ionic/angular';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -31,17 +29,14 @@ export class AuthPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private toasterServices: ToasterServive,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
     this.initForm();
     this.createLoginForm();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/screens/issues';
-
-    // Keyboard.addListener('keyboardWillShow', info => {
-    //   console.log('keyboard will show with height:', info.keyboardHeight);
-    // });
   }
 
   initForm() {
@@ -59,9 +54,6 @@ export class AuthPage implements OnInit {
   }
 
   async loginHandler() {
-  // let httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  // };
   const loading = await this.loadingCtrl.create({
     message: 'Loading...',
   });
@@ -73,10 +65,12 @@ export class AuthPage implements OnInit {
     loading.dismiss();
     if (response.token) {
       this.storage.setAccessToken(response['token']);
+      this.authService.userInfo.next(JSON.parse(localStorage.getItem('user') || '{}'))
       this.toasterServices.success('top', 'Sign in is successfuly');
       this.router.navigateByUrl(this.returnUrl);
     }
-  }, error => {
+  }, (error) => {
+    console.log(error)
     loading.dismiss();
   });
   // this.router.navigate(['/screens/issues'])

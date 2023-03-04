@@ -38,3 +38,26 @@ h3 {
       }
     }
 }
+
+h3 {
+  color: var(--ion-color-secondary);
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.report-image {
+  text-align: center;
+  margin-top: 60px;
+  ion-img {
+    width: 70%;
+    height: auto;
+    margin: auto;
+  }
+}
+
+ion-button {
+  font-size: 16px;
+  margin-top: 80px;
+  font-weight: 600;
+  color: var(--ion-color-secondary);
+}
